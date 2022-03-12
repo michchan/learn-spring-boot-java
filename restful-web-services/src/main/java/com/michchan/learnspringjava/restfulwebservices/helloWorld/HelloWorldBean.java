@@ -1,10 +1,10 @@
-package com.michchan.learnspringjava.restfulwebservices;
+package com.michchan.learnspringjava.restfulwebservices.helloWorld;
 
 public class HelloWorldBean {
 
     private String message = "";
 
-    HelloWorldBean(String message) {
+    public HelloWorldBean(String message) {
         this.message = message;
     }
 
