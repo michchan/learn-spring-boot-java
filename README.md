@@ -1,1 +1,1 @@
-# learn-spring-java
+# learn-spring-boot-java
