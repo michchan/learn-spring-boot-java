@@ -16,8 +16,9 @@ public class HelloWorldBean {
         this.message = message;
     }
 
-    @Override
-    public String toString() {
-        return String.format("HelloWorldBean [message=%s]", message);
-    }
+    // This is not required on Java 11 and Spring Boot 2.6.4
+    //@Override
+    //public String toString() {
+    //    return String.format("HelloWorldBean [message=%s]", message);
+    //}
 }
