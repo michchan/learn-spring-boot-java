@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloWorldController {
-
     // @RequestMapping(method = RequestMethod.GET, path = "/hello-world")
     @GetMapping(path = "/hello-world")
     public String helloWorld() {
@@ -21,5 +20,4 @@ public class HelloWorldController {
     public HelloWorldBean helloWorldBeanName (@PathVariable String name) {
         return new HelloWorldBean(String.format("Hello World, %s", name));
     }
-
 }

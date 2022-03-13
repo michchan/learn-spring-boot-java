@@ -1,7 +1,6 @@
 package com.michchan.learnspringjava.restfulwebservices.helloWorld;
 
 public class HelloWorldBean {
-
     private String message = "";
 
     public HelloWorldBean(String message) {

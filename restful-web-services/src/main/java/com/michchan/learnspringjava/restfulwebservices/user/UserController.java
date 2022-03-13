@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 public class UserController {
-
     @Autowired
     private UserDaoService userDaoService;
 
@@ -33,10 +32,10 @@ public class UserController {
         User savedUser = userDaoService.save(user);
 
         URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(savedUser.getId())
-                .toUri();
+            .fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(savedUser.getId())
+            .toUri();
 
         // Return correct HTTP status code (201) and created location.
         // e.g. `Location = http://localhost:8080/users/4` in response headers.
