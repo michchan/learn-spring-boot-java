@@ -1,11 +1,13 @@
 package com.michchan.learnspringjava.restfulwebservices.user;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class User {
 
     private Integer id;
 
+    @Size(min=2, max=100, message = "User's name must be characters with length between 2 to 100")
     private String name;
 
     private Date birthdate;
