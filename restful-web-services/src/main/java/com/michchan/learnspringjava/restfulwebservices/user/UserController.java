@@ -41,4 +41,12 @@ public class UserController {
         // e.g. `Location = http://localhost:8080/users/4` in response headers.
         return ResponseEntity.created(location).build();
     }
+
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable String id) {
+        User user = userDaoService.deleteById(Integer.parseInt(id));
+        if (user == null) {
+            throw new UserNotFoundException("id-" + id);
+        }
+    }
 }
