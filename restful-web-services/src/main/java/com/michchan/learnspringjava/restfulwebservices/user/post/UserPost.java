@@ -1,4 +1,6 @@
-package com.michchan.learnspringjava.restfulwebservices.post;
+package com.michchan.learnspringjava.restfulwebservices.user.post;
+
+import com.michchan.learnspringjava.restfulwebservices.post.Post;
 
 import java.util.List;
 
