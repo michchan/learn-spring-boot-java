@@ -5,6 +5,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 @RestController
@@ -33,7 +34,7 @@ public class HelloWorldController {
     public String helloWorldInternationalized (
         @RequestHeader(name = "Accept-Language", required = false) Locale locale
     ) {
-        // @TODO: Handle CHAR encoding like with chinese characters
+        // For Chinese/Japanese etc. characters, the message should be put in unicode like "\u4f60\u597d"
         return messageSource
                 .getMessage("good.morning.message", null, "Default Message", LocaleContextHolder.getLocale());
     }
