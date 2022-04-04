@@ -30,12 +30,15 @@ public class HelloWorldController {
         return new HelloWorldBean(String.format("Hello World, %s", name));
     }
 
-    @GetMapping(path = "/hello-world-i18n")
+    @GetMapping(path = {"/hello-world-i18n", "/hello-world-i18n/{name}"})
     public String helloWorldInternationalized (
-        @RequestHeader(name = "Accept-Language", required = false) Locale locale
+        @RequestHeader(name = "Accept-Language", required = false) Locale locale,
+        @PathVariable(required = false) String name
     ) {
+        String displayName = "John Doe";
+        if (name != null) displayName = name;
         // For Chinese/Japanese etc. characters, the message should be put in unicode like "\u4f60\u597d"
         return messageSource
-                .getMessage("good.morning.message", null, "Default Message", LocaleContextHolder.getLocale());
+                .getMessage("good.morning.message", new String[]{displayName, "123"}, "Default Message", LocaleContextHolder.getLocale());
     }
 }
