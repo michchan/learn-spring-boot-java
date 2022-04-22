@@ -1,10 +1,13 @@
 package com.michchan.learnspringjava.restfulwebservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // Less recommended as it is unsafe to hardcode the field name here
 @JsonIgnoreProperties(value={"field1", "field3"})
+// For Dynamic filtering
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
     private String field1;
     private String field2;
